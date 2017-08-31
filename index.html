@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Project Code Review</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	</script>
+	<script src="assets/js/app.js">
+	</script>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link href="https://bootswatch.com/spacelab/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/style.css" rel="stylesheet">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js">
+	</script>
+
+	<!-- Google Analyitics Tracking Code -->
+       <!-- <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-102515248-1', 'auto');
+          ga('send', 'pageview');
+
+        </script> -->
+</head>
+
+<body>
+	<div class="carousel fade-carousel slide" data-interval="4000" data-ride="carousel" id="bs-carousel">
+
+
+		<ol class="carousel-indicators">
+			<li class="active" data-slide-to="0" data-target="#bs-carousel">
+			</li>
+
+
+			<li data-slide-to="1" data-target="#bs-carousel">
+			</li>
+
+
+			<li data-slide-to="2" data-target="#bs-carousel">
+			</li>
+		</ol>
+		<!-- Wrapper for slides -->
+
+
+		<div class="carousel-inner">
+			<div class="item slides active">
+				<div class="slide-1">
+				</div>
+
+
+				<div class="hero">
+					<hgroup class="strokeme">
+						<h1>Vinum Vitae</h1>
+
+
+						<h3>Up for some fermented grape juice?</h3>
+					</hgroup>
+
+
+					<div>
+						<div>
+							<!-- GitHub Sign-In-->
+							<a class="btn btn-success btn-lg github-signin-btn" role="button">Sign in!</a>
+						</div>
+					</div>
+
+                    <div>
+                        <p class="strokeme">(scroll down for more info)</p>
+                        <span class="glyphicon glyphicon-arrow-down strokeme"></span>
+			        </div>
+				</div>
+			</div>
+
+
+			<div class="item slides">
+				<div class="slide-2">
+				</div>
+
+
+				<div class="hero">
+					<hgroup class="strokeme">
+						<h1>Vinum Vitae</h1>
+
+
+						<h3>Alcohol is technically a solution</h3>
+					</hgroup>
+
+
+					<div>
+						<div>
+							<!-- GitHub Sign-In-->
+							<a class="btn btn-success btn-lg github-signin-btn" role="button">Sign in!</a>
+						</div>
+					</div>
+
+                    <div>
+                       <p class="strokeme">(scroll down for more info)</p>
+                        <span class="glyphicon glyphicon-arrow-down strokeme"></span>
+			        </div>
+				</div>
+			</div>
+
+
+			<div class="item slides">
+				<div class="slide-3">
+				</div>
+
+
+				<div class="hero">
+					<hgroup class="strokeme">
+						<h1>Code Convo</h1>
+
+
+						<h3>Don't make this website pretentious</h3>
+                        
+					</hgroup>
+
+
+					<div>
+						<div>
+							<!-- GitHub Sign-In-->
+							<a class="btn btn-success btn-lg github-signin-btn" role="button">Sign in!</a>
+						</div>
+					</div>
+
+				    <div>
+                        <p class="strokeme">(scroll down for more info)</p>
+                        <span class="glyphicon glyphicon-arrow-down strokeme"></span>
+			        </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container">
+
+
+		<div class="row">
+			<div class="jumbotron">
+				<h2>Who are we?</h2>
+				<h3>Vinum Vitae is a website for all things alcohol! Hop on Vinum Vitae to find and save wines and beers to pick up in the future.</h3>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<h2 class="panel-title">GitHub Linking</h2>
+				</div>
+				<div class="panel-body">	
+					<div class="col-sm-4 col-md-4 col-lg-4">
+						<p>With our state of art wine database, all you'll have to do is search for the wine or beer you're interested in, save it, and we'll handle the rest. This will leave you more time to actually enjoy your wine or beer instead of worrying about which one you had for dinner last night. On Vinum Vitae, you can discover the answers to all the wine questions you've been dying to ask, but never had the tools for.</p>
+					</div>
+
+
+					<div class="col-sm-8 col-md-8 col-lg-8">
+						<p><small><img class="img-responsive" src="assets/images/linking-screenshot.png" alt="screenshot of GitHub linking with CodeConvo.com"></small>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<h2 class="panel-title">Comment System</h2>
+				</div>
+				<div class="panel-body">
+					<div class="col-sm-4 col-md-4 col-lg-4">
+						<p>The great thing about Vinum Viate is that we have no problem with the amount of booze you drink. That's your problem, not ours.</p>
+					</div>
+
+
+					<div class="col-sm-8 col-md-8 col-lg-8">
+						<p><small><img class="img-responsive" src="assets/images/commenting-screenshot.png" alt="screenshot of Vinum Viate save system"></small>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<h2 class="panel-title">No Exploitative Posts</h2>
+				</div>
+				<div class="panel-body">
+					<div class="col-sm-4 col-md-4 col-lg-4">
+						<p>At Vinum Viate, we have a healthy database linked with thousands of wines and beers. If people drink it, we probably know about it.</p>
+					</div>
+
+
+					<div class="col-sm-8 col-md-8 col-lg-8">
+						<p><small><img class="img-responsive" src="assets/images/CodeConvoDemo.jpg" alt="Girl points to Vinum Vitae website."></small>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer-bottom">
+
+		<div class="container">
+
+			<div class="row">
+
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+					<div class="copyright">
+
+						© 2017, VinumVitae, All rights reserved
+
+					</div>
+
+				</div>
+
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+					<div class="design">
+
+						<a href="#">Vinum Vitae </a> |  Web Design & Development by Cory Lozon, Adrian Fahrer, and <a href="christopher-rackley.com"> Chris Rackley </a>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>
