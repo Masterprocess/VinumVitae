@@ -25,12 +25,15 @@
 }
 
 #slide{
-
    background: url("../images/texturebackground.jpg") no-repeat center fixed;
 }
 
 #panelchange {
-background: grey;
+background: #68838B;
+font-size: 20px;
+font-style: bold;
+color: black;
+padding-left: 30px;
 }
 
 #logo-image {
@@ -52,17 +55,83 @@ background: grey;
   box-sizing: border-box;
 }
 
-#shadowbox {
-  background: url("../images/texturebackground.jpg");
-  color: #444;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-font-smoothing: antialiased ;
-  font-weight: 300;
-  line-height: 1.4;
+.shadow, shadow:before, shadow:after {
+  background: url("../images/newpaper.jpg") /*no-repeat center fixed*/;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 15px;
+}
 
+.shadow {
+  display: inline-block;
+  position: relative;
+  -webkit-border-radius: 2%;
+  -moz-border-radius: 2%;
+  border-radius: 2%;
+  -moz-box-shadow: rgba(0, 0, 0, 0.8) 3px 3px 10px inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.8) 3px 3px 10px inset;
+  box-shadow: rgba(0, 0, 0, 0.8) 3px 3px 10px inset;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
+.shadow:hover {
+  -moz-box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+  box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+}
+.shadow img {
+  max-width: 100%;
+  position: relative;
+  z-index: -1;
+  -webkit-border-radius: 2%;
+  -moz-border-radius: 2%;
+  border-radius: 2%;
+}
+
+ 
+.box {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  background: url("../images/newpaper.jpg");
+  margin: 40px auto;
+}
+
+.effect {
+  position: relative;
+}
+
+.effect:before, .effect:after
+{
+  z-index: -1;
+  position: absolute;
+  content: "",
+  bottom: 25px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  background: #777;
+  box-shadow: 0 35px 30px #777;
+  transform: rotate(-8deg);
+}
+
+.effect:after
+{
+  transform: rotate(8deg);
+  right:10px;
+  left: auto;
+}
+
+#paperbackground {
+  background: url("../images/newpaper.jpg");
+  color: #444;
+  font-size: 16px;
 }
 
 .one {
+
      background: url("../images/winefields.jpg") no-repeat center fixed;
      -webkit-background-size: cover;
   	 -moz-background-size: cover;
@@ -109,7 +178,7 @@ h4 {
 	font-size: 26px;
 	text-align: center;
 	letter-spacing: 1px;
-	color: black
+	color: #444;
 }
 
 .main-info-info {
@@ -117,9 +186,7 @@ h4 {
 	font-style: bold;
 	text-align: center;
 	letter-spacing: 1px;
-	color: black
-
-
+  color: #444;
 }
 
 
@@ -157,12 +224,7 @@ h4 {
  
 }
 
-.footer-bottom {
-	width: 100%;
-	height: 120px;
-	background-image: url(../images/footer.jpg);
-	background-size: 100% 100%;
-}
+
 
 .custom-button {
    text-align: center;
@@ -196,4 +258,32 @@ h4 {
    border-top-color: #1b435e;
    background: #1b435e;
    }
+
+.footer {
+  background-color: #262626;
+  border-top: solid 2px #A9A9A9;
+  color: #fff;
+  text-align: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;  
+  top: 0;
+  left: 0;
+}
+
+#footerlogo {
+  height: 75px;
+  width: 75px;
+  padding: 15px;
+  align-items: center;
+}
+.copyright {
+  border-right: ridge 3px #e4e4e4;
+
+}
+
 
