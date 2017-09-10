@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         password: {
             type: DataTypes.STRING,
-            validate: { len: [6,48]}
+            validate: { len: [8,120]}
         }
     })
 
