@@ -14,27 +14,21 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-left" href="#"><img class="navpic" src="app/public/images/VinumVitae.gif"></a>
-			</div>
+
+<div >
+<img class="navpic" src="app/public/images/WineLogo.png"> 
+</div> 
+
+<div class="container-fluid top-nav text-right"><a href="#" class="text-uppercase" data-toggle="modal" data-target="#login-modal"><span id=link>Home</span></a></div>
 
 
-			<form class="navbar-form navbar-right" id="signin" name="signin" role="form">
-				<div class="input-group">
-					<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> <input class="form-control" id="email" name="email" placeholder="Email Address" type="email" value="">
-				</div>
+<div class="container1">
+<div class="row">
+<div class="col-md-6">  
 
-
-				<div class="input-group">
-					<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span> <input class="form-control" id="password" name="password" placeholder="Password" type="password" value="">
-				</div>
-				<button class="btn btn-primary" type="submit">Login</button>
-			</form>
-		</div>
-	</nav>
-	<!--<form action="/action_page.php">
+<div id=form>
+<h3>Create an Account</h3>
+  <form action="/action_page.php">
     <label for="uname">Username</label>
     <input type="text" id="uname" name="username" placeholder="Enter Your Username" required>
 
@@ -45,51 +39,57 @@
     <input type="password" id="pwd" name="psw-repeat" placeholder="Confirm Your Password" required>
   
     <input type="submit" value="Submit">
-  </form>-->
 
+  </form>
+</div>
+</div>
+<div class="col-md-6"> 
 
-	<div class="row">
-    
-		<div id='signup-wrapper form col-sm-12 col-md-12 col-lg-12'>
-			<h3>Create an Account</h3>
+<div id=form>
+<h3>Login</h3>
+  <form action="/action_page.php">
+    <label for="uname">Username</label>
+    <input type="text" id="uname" name="username" placeholder="Enter Your Username" required>
 
+    <label for="pwd">Password</label>
+    <input type="password" id="pwd" name="pwd" placeholder="Enter Your Password" required>
 
-			<form action="/users/new" autocomplete="off" method="post">
-				<div>
-					<label>What's your Email?:</label>
+   
+    <input type="submit" value="Login">
+  </form>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-					<div id="createEmail">
-						<input type="text">
-					</div>
-				</div>
+<div class="container footer">
+    <div class="row">
+      <div class="col-sm-4 col-md-4 col-lg-4" id="footerlogo">
+        <p><img class="img-responsive" src="app/public/images/WhiteVNoBackground.png" alt="OurLogo"></p>
+        <p>Vinum Vitae</p>
+      </div>
 
+      <div class="col-sm-4 col-md-4 col-lg-4" id ="develop">
+        <p>Web Design & Development</p>
+        <p><a href="FahrerDesign.com"> Adrian Fahrer</a></p>
+        <p><a href="CoryLozon.com">Cory Lozon</a></p>
+        <p><a href="christopher-rackley.com">Chris Rackley</a></p>
+      </div>
 
-				<div>
-					<label>What's your Name?:</label>
+      <div class="col-sm-4 col-md-4 col-lg-4" id ="ourapp">
+        <p>Misc Info</p>
+        <p>Join Our Mailing List</p>
+        <p>More Info</a></p>
+      </div>
+    </div>
 
-					<div id="createName">
-						<input type="text">
-					</div>
-				</div>
-
-
-				<div>
-					<label>Create a Username:</label>
-
-					<div id="createNickname">
-						<input type="text">
-					</div>
-				</div>
-
-
-				<div>
-					<label>Create a password:</label>
-
-					<div id="createPass">
-						<input type="password">
-					</div>
-				</div>
-
+    <div class = "row" id="copyright">
+      <p>™ © 2017, VinumVitae, All rights reserved</p>
+    </div>
+  </div> <!--footer-->
+</body>
+</html>
 
 				<div>
 					<input class="three" id="button" type="submit" value="NEXT">
