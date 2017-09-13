@@ -30,11 +30,15 @@
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.5",
     "express-ws": "^3.0.0",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
     "method-override": "^2.3.9",
     "mysql2": "^1.4.2",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "path": "^0.12.7",
     "sequelize": "^4.8.0",
+    "sequelize-fixtures": "^0.6.0",
     "ws": "^3.1.0"
   }
 }
