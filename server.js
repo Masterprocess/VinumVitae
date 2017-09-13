@@ -12,8 +12,10 @@ const path = require('path');
 const passport = require('passport')
     , LocalStrategy = require('passport-local').Strategy;
 const db = require('./app/models');
+var BreweryDb = require('brewerydb-node');
+var brewdb = new BreweryDb('2fcbdd4c5c466d15761da5cd516a15c5');
 
-// External Logics
+// External Logic
 // -------------------------------------------------------------
 
 

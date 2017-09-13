@@ -6,7 +6,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const router = express.Router();
 const models = require('../models');
-const User = models.User;
+const User = models.user;
 
 
 // CONFIGURE LOCAL STRATEGIES FOR PASSWORD AUTHENTICATION
@@ -91,8 +91,10 @@ router.get('/', require('connect-ensure-login').ensureLoggedIn('login'), functio
 
 router.post('/new', (req,res) => {
     var newUser = {
-        username: req.body.username,
-        password: User.generateHash(req.body.password)
+        username: req.body.user.username,
+        password: User.generateHash(req.body.user.password),
+        name: req.body.user.name,
+        profile: req.body.user.profile
     }
 
     User.create(newUser).then(() => {
