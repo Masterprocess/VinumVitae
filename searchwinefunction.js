@@ -8,7 +8,6 @@ $(document).ready(function(){
         var wineVintage;
         var wineRegion;
 
-
         function searchWineInformation(wine){
             var queryURL = "http://api.snooth.com/wines/?akey=jpdcqrqgxv6sc3eao019dbtgne6wezij10hhbmmr1t76z5t8&ip=66.28.234.115&q=" + wine + "&n=20";
                 $.ajax({
@@ -16,19 +15,22 @@ $(document).ready(function(){
                     method:'GET'
                 }).done(function(response){
                     parsed = JSON.parse(response);
-                    console.log(queryURL);
+                    console.log(parsed);
                     for (var i = 0; i < parsed.wines.length; i++){
                         wineCounter++;
                         console.log(wineCounter);
                         if (wineCounter < 16)
                         {
+
                             var wellSection = $("<div>");
+                            
+                          
                             wellSection.addClass("well");
                             wellSection.attr("id", "wine-well-" + wineCounter);
+                            wellSection.attr("wineInfo", JSON.stringify(parsed.wines[i]));
                             //wellSection.attr("src", parsed.wines[i].image);
                             console.log(wellSection);
                             $("#wine-div").append(wellSection);
-                            $("#wine-img").append(wellSection);
 
                         $("#wine-well-" + wineCounter)
                         .append("<p>" + parsed.wines[i].name + "<p>");
@@ -45,11 +47,9 @@ $(document).ready(function(){
                         $("#wine-well-" + wineCounter)
                         .append("<p>" + parsed.wines[i].price + "<p>");
                         //console.log("wine name" + parsed.wines[i].price);
-                        $("wine-well-")
-                        .attr("src", parsed.wines[i].image);
-                        // $("#wine-well-" + wineCounter)
-                        // .append("p", parsed.wines[i].image);
-                        //console.log(parsed.wines[i].image);
+                        var picture = parsed.wines[i].image;
+                        $("#wine-well-")
+                        .append("img-src", picture);
                     }
 
                     if (wineCounter > 15)
@@ -61,15 +61,25 @@ $(document).ready(function(){
 
 
                     }
+                    $(".well").click(function(event){
+                    console.log("hi");
+                     event.preventDefault();
+                     var wineInfo = $(this).attr("wineInfo");
+                     console.log(wineInfo);
+                     $("#userSelection").attr("value", wineInfo);
+                     $("#wineForm").submit();
+                     
+            });
                  
             });
             }
+            
 
-
+            
+            
             $("#select-wine").on("click", function(event){
                 event.preventDefault();
                 var wine = $("#wine-input").val().trim();
-                //console.log(wine);
                 searchWineInformation(wine);
                 $(".row-small-hide").show();
                 $("#wine-div").empty();
