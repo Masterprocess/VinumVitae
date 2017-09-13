@@ -11,34 +11,16 @@
   
 </head>
 <body>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-   
-    <div class="navbar-header">
-     
-      <a href="#" class="navbar-left"><img class=navpic src="app/public/images/VinumVitae.gif"></a>
-    </div>
+<div >
+<img class="navpic" src="app/public/images/WineLogo.png"> 
+</div> 
 
-   
-    
-        
-      <form id="signin" class="navbar-form navbar-right" role="form">
-          <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <input id="email" type="email" class="form-control" name="email" value="" placeholder="Email Address">                                        
-          </div>
+<div class="container-fluid top-nav text-right"><a href="#" class="text-uppercase" data-toggle="modal" data-target="#login-modal"><span id=link>Home</span></a></div>
 
-          <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-              <input id="password" type="password" class="form-control" name="password" value="" placeholder="Password">                                        
-          </div>
 
-          <button type="submit" class="btn btn-primary">Login</button>
-       </form>
-    </div>
-  </div>
-</nav>
-
+<div class="container1">
+<div class="row">
+<div class="col-md-6">  
 
 <div id=form>
 <h3>Create an Account</h3>
@@ -55,6 +37,54 @@
     <input type="submit" value="Submit">
   </form>
 </div>
+</div>
+<div class="col-md-6"> 
+
+<div id=form>
+<h3>Login</h3>
+  <form action="/action_page.php">
+    <label for="uname">Username</label>
+    <input type="text" id="uname" name="username" placeholder="Enter Your Username" required>
+
+    <label for="pwd">Password</label>
+    <input type="password" id="pwd" name="pwd" placeholder="Enter Your Password" required>
+
+   
+    <input type="submit" value="Login">
+  </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="container footer">
+    <div class="row">
+      <div class="col-sm-4 col-md-4 col-lg-4" id="footerlogo">
+        <p><img class="img-responsive" src="app/public/images/WhiteVNoBackground.png" alt="OurLogo"></p>
+        <p>Vinum Vitae</p>
+      </div>
+
+      <div class="col-sm-4 col-md-4 col-lg-4" id ="develop">
+        <p>Web Design & Development</p>
+        <p><a href="FahrerDesign.com"> Adrian Fahrer</a></p>
+        <p><a href="CoryLozon.com">Cory Lozon</a></p>
+        <p><a href="christopher-rackley.com">Chris Rackley</a></p>
+      </div>
+
+      <div class="col-sm-4 col-md-4 col-lg-4" id ="ourapp">
+        <p>Misc Info</p>
+        <p>Join Our Mailing List</p>
+        <p>More Info</a></p>
+      </div>
+    </div>
+
+    <div class = "row" id="copyright">
+      <p>™ © 2017, VinumVitae, All rights reserved</p>
+    </div>
+  </div> <!--footer-->
+</body>
+</html>
 
 </body>
 </html>
