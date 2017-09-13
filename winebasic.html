@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Wine</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css">
+    <link href="app/public/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- <style>
+    .panel-body a {
+        word-break: break-all;
+    }
+    </style> -->
+
+</head>
+<body>
+
+    <!--Wine Select Box-->
+   <div class = "container two">
+
+   <div class="row" id="main-header">
+        <div class="col-md-2" id="logo-image">
+            <img src="app/public/images/WineLogo.png" alt="VV Logo" style="width:210px; height: 85px; margin-top: 10px">
+        </div>
+        <div class="col-md-3">
+            <h1>Vinum Vitae</h1>
+            <h2>   -Wine of Life</h2>
+        </div>
+        <div class="col-md-3">
+        </div>
+         <div class="col-md-4" id="button-down">
+            <button type="button" id="sign-in-button"><span class ="glyphicon glyphicon"></span>Sign in!</a></button>
+        </div>
+    </div> <!--close main header -->
+        
+        <div class="row">
+            <div class="space">
+            </div>
+        </div>
+        <div class="row">
+            <div class="space">
+            </div>
+        </div>
+
+        <div class="row-small">
+            <div class="panel panel-success">
+                <div class="panel-heading"  id="panelchange">
+                    <h4 class="panel-title" style="font-size: 24px">Find Out About Your Wine At Vinum Vitae</h4>
+                </div>
+                <div class="panel-body" id="paperbackground">   
+                    <div class="col-sm-6 col-md-6 col-lg-6" id="border">
+                        <p>Use our basic search to find out details about your favorite wine, enter basic information to find out ratings, reviews, and food parings for your glass of wine.</p>
+                    </div>
+                    <div class="col-sm-1 col-md-1 col-lg-1">
+                    </div>
+                    <div class="col-sm-5 col-md-5 col-lg-5">
+                    <div class="searchbox">
+            <div class="container-1">
+                <span class="icon"><i class="fa fa-search"></i></span>
+                <input type="search" id="wine-input" type="submit" placeholder="Search Wine..."/>
+                </div>
+                </div>
+            <br>
+        <!--submit button-->
+
+            <input id="select-wine" type="submit" value="Search Wine">
+            <input id="clear-wine" type="button" value="Clear Results">
+            </form>
+    </div>
+  
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--  <div class="searchbox">
+            <div class="container-1">
+                <span class="icon"><i class="fa fa-search"></i></span>
+                <input type="search" id="wine-input" type="submit" placeholder="Search Wine..."/>
+                </div>
+                </div>
+            <br> -->
+        
+
+           <!--  <input id="select-wine" type="submit" value="Search Wine">
+            <input id="clear-wine" type="button" value="Clear Results">
+            </form>
+    </div>  -->
+  
+  
+
+
+    <!--Wine Information-->
+
+    <div class="row">
+        <div class="col-sm-12">
+            <br>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="panel-title"><strong><i class ="fa fa-table"></i>Top Wines</strong></div>
+                </div>
+                <div class="panel-body" id="wine-div"></div>
+                <div id="wine-img"></div>
+            </div>
+        </div>
+    </div>
+            </div>
+          
+
+        </div>
+    </div>  <!--close row for wine info -->
+    
+    
+
+
+
+
+    </body>
+</div> <!-- close container -->
+
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script>
+
+        var wineCounter = 0;
+        finalWineSelection = [];
+        var wineName;
+        var wineType;
+        var wineVintage;
+        var wineRegion;
+
+
+        function searchWineInformation(wine){
+            var queryURL = "http://api.snooth.com/wines/?akey=jpdcqrqgxv6sc3eao019dbtgne6wezij10hhbmmr1t76z5t8&ip=66.28.234.115&q=" + wine + "&n=20";
+                $.ajax({
+                    url:queryURL,
+                    method:'GET'
+                }).done(function(response){
+                    //console.log(response);
+                    //console.log(queryURL);
+                    parsed = JSON.parse(response);
+                    console.log(queryURL);
+                    for (var i = 0; i < parsed.wines.length; i++){
+                        wineCounter++;
+                        if (wineCounter < 16)
+                        {
+                        var wellSection = $("<button>");
+                        wellSection.addClass("well");
+                        wellSection.attr("id", "wine-well-" + wineCounter);
+                        //wellSection.attr("src", parsed.wines[i].image);
+                        console.log(wellSection);
+                        $("#wine-div").append(wellSection);
+                        $("#wine-img").append(wellSection);
+
+                       $("#wine-well-" + wineCounter)
+                        .append("<p>" + parsed.wines[i].name + "<p>");
+                        // //console.log("wine name" + parsed.wines[i].name);
+                        $("#wine-well-" + wineCounter)
+                        .append("<p>" + parsed.wines[i].type + "<p>");
+                        // //console.log("wine name" + parsed.wines[i].type);
+                        $("#wine-well-" + wineCounter)
+                        .append("<p>" + parsed.wines[i].vintage + "<p>");
+                        // //console.log("wine name" + parsed.wines[i].vintage);
+                        $("#wine-well-" + wineCounter)
+                        .append("<p>" + parsed.wines[i].region + "<p>");
+                        // //console.log("wine name" + parsed.wines[i].region);
+                        $("#wine-well-" + wineCounter)
+                        .append("<p>" + parsed.wines[i].price + "<p>");
+                        //console.log("wine name" + parsed.wines[i].price);
+                        $("wine-well-")
+                        .attr("src", parsed.wines[i].image);
+                        // $("#wine-well-" + wineCounter)
+                        // .append("p", parsed.wines[i].image);
+                        //console.log(parsed.wines[i].image);
+                    }
+
+                    if (wineCounter > 15)
+                    {
+                        alert("Try to narrow your search - too many results");
+                        wineCounter = 0;
+
+                    }
+
+
+                    }
+                 
+            });
+            }
+            
+
+            $("#select-wine").on("click", function(event){
+                event.preventDefault();
+                var wine = $("#wine-input").val().trim();
+                //console.log(wine);
+                searchWineInformation(wine);
+                $("#wine-div").empty();
+            
+            });
+
+            $("#clear-wine").on("click", function(event){
+                wineCounter=0;
+                $("#wine-div").empty();
+            });
+
+            </script>
+            </html>
+
+   
+
+
