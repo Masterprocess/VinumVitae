@@ -4,16 +4,16 @@ const express = require('express');
 const app = express();
 const hdbs = require('express-handlebars');
 const session = require('express-session');
-const cookieParser = require('cookie-parser');  
+const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override')
 const path = require('path');
-// const WebSocket = require('ws');
-const passport = require('passport')
-    , LocalStrategy = require('passport-local').Strategy;
+//const http = require('http');
+const passport = require('passport'),
+    LocalStrategy = require('passport-local').Strategy;
 const db = require('./app/models');
-var BreweryDb = require('brewerydb-node');
-var brewdb = new BreweryDb('2fcbdd4c5c466d15761da5cd516a15c5');
+const fs = require('fs');
+const sequelize_fixtures = require('sequelize-fixtures');
 
 // External Logic
 // -------------------------------------------------------------
@@ -56,20 +56,13 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use('/', require(path.join(__dirname,'./app/routes/htmlController.js')));
 app.use('/users', require(path.join(__dirname,'./app/routes/loginController.js')));
 
-// INTIALIZING SOCKET.IO
-// -------------------------------------------------------------
-const http = require('http');;
-const server = http.createServer(app);
-const io = require('socket.io')(server)
-
 
 // STARTING DB AND SERVER
 // -------------------------------------------------------------
 
-db.sequelize.sync(
+/*db.sequelize.sync(
     // {force: true}   
-).then(() => {
-    server.listen(port, () => {
+).then(() => {*/
+    app.listen(port, () => {
         console.log('listen to port',port)
     })
-})
