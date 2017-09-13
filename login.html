@@ -1,48 +1,40 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="app/public/css/lstyle.css">
-  
+	<title>Bootstrap Example</title>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	</script>
+	<link href="app/public/css/lstyle.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-   
-    <div class="navbar-header">
-     
-      <a href="#" class="navbar-left"><img class=navpic src="app/public/images/VinumVitae.gif"></a>
-    </div>
-
-   
-    
-        
-      <form id="signin" class="navbar-form navbar-right" role="form">
-          <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <input id="email" type="email" class="form-control" name="email" value="" placeholder="Email Address">                                        
-          </div>
-
-          <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-              <input id="password" type="password" class="form-control" name="password" value="" placeholder="Password">                                        
-          </div>
-
-          <button type="submit" class="btn btn-primary">Login</button>
-       </form>
-    </div>
-  </div>
-</nav>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-left" href="#"><img class="navpic" src="app/public/images/VinumVitae.gif"></a>
+			</div>
 
 
-<div id=form>
-<h3>Create an Account</h3>
-  <form action="/action_page.php">
+			<form class="navbar-form navbar-right" id="signin" name="signin" role="form">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> <input class="form-control" id="email" name="email" placeholder="Email Address" type="email" value="">
+				</div>
+
+
+				<div class="input-group">
+					<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span> <input class="form-control" id="password" name="password" placeholder="Password" type="password" value="">
+				</div>
+				<button class="btn btn-primary" type="submit">Login</button>
+			</form>
+		</div>
+	</nav>
+	<!--<form action="/action_page.php">
     <label for="uname">Username</label>
     <input type="text" id="uname" name="username" placeholder="Enter Your Username" required>
 
@@ -53,8 +45,57 @@
     <input type="password" id="pwd" name="psw-repeat" placeholder="Confirm Your Password" required>
   
     <input type="submit" value="Submit">
-  </form>
-</div>
+  </form>-->
 
+
+	<div class="row">
+    
+		<div id='signup-wrapper form col-sm-12 col-md-12 col-lg-12'>
+			<h3>Create an Account</h3>
+
+
+			<form action="/users/new" autocomplete="off" method="post">
+				<div>
+					<label>What's your Email?:</label>
+
+					<div id="createEmail">
+						<input type="text">
+					</div>
+				</div>
+
+
+				<div>
+					<label>What's your Name?:</label>
+
+					<div id="createName">
+						<input type="text">
+					</div>
+				</div>
+
+
+				<div>
+					<label>Create a Username:</label>
+
+					<div id="createNickname">
+						<input type="text">
+					</div>
+				</div>
+
+
+				<div>
+					<label>Create a password:</label>
+
+					<div id="createPass">
+						<input type="password">
+					</div>
+				</div>
+
+
+				<div>
+					<input class="three" id="button" type="submit" value="NEXT">
+				</div>
+			</form>
+		</div>
+	</div>
 </body>
 </html>
