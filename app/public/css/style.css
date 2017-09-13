@@ -22,6 +22,7 @@
 #main-header{
   border-bottom: solid 2px #A9A9A9;
    background: url("../images/texturebackground.jpg") no-repeat center fixed;
+
 }
 
 #slide{
@@ -30,11 +31,13 @@
 
 #panelchange {
 background: #68838B;
-font-size: 20px;
+font-size: 30px;
 font-style: bold;
 color: black;
-padding-left: 30px;
+text-align: center;
 }
+
+
 
 #logo-image {
   align-items: center;
@@ -99,6 +102,7 @@ padding-left: 30px;
   margin: 40px auto;
 }
 
+
 .effect {
   position: relative;
 }
@@ -130,6 +134,15 @@ padding-left: 30px;
   font-size: 16px;
 }
 
+#border {
+  border-left: ridge 2px #A9A9A9;
+}
+
+#button-down{
+  padding-top: 18px;
+  padding-left: 10px;
+}
+
 .one {
 
      background: url("../images/winefields.jpg") no-repeat center fixed;
@@ -146,7 +159,7 @@ padding-left: 30px;
 
 
 .two {
-     background: url("../images/paper.jpg") no-repeat center fixed;
+     background: url("../images/winesearchcellar.jpg") no-repeat center fixed;
      -webkit-background-size: cover;
      -moz-background-size: cover;
      -o-background-size: cover;
@@ -169,8 +182,16 @@ h3 {
 }
 
 h4 {
-	font-size: 24px;
+	font-size: 30px;
 	font-style: italic;
+}
+
+.container-1 {
+  width: 500px;
+  height: 50px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
 }
 
 .main-info-title {
@@ -191,8 +212,8 @@ h4 {
 
 
 .row-small {
-	margin-right: 75px;
-	margin-left: 75px;
+	margin-right: 85px;
+	margin-left: 85px;
 }
 
 .space {
@@ -275,6 +296,10 @@ h4 {
   left: 0;
 }
 
+.img-frontpage {
+  height: 50%;
+  width: 100%;
+}
 #footerlogo {
   height: 75px;
   width: 75px;
@@ -285,5 +310,7 @@ h4 {
   border-right: ridge 3px #e4e4e4;
 
 }
+
+
 
 
