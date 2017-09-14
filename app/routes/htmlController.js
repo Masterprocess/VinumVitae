@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    // var isLoggedIn = !!req.user;
     res.render('index', {
         // loggedIn: isLoggedIn
     })
@@ -19,6 +18,6 @@ router.get('/userProfile', function (req, res) {
 })
 
 router.get('/home', function (req, res) {
-    res.render('landingPage')
+    res.render('')
 })
 module.exports = router;
