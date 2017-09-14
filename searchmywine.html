@@ -9,48 +9,58 @@
     <link href="app/public/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-  
-
     <!-- <style>
     .panel-body a {
         word-break: break-all;
     }
     </style> -->
-
 </head>
 <body>
 
-    <!--Wine Select Box-->
+<!--Wine Select Box-->
 <div class = "container two">
    <div class="row" id="main-header">
         <div class="col-md-2" id="logo-image">
             <img src="app/public/images/WineLogo.png" alt="VV Logo" style="width:210px; height: 85px; margin-top: 10px">
         </div>
-
         <div class="col-md-3">
             <h1>Vinum Vitae</h1>
             <h2>   -Wine of Life</h2>
         </div>
-
         <div class="col-md-3">
         </div>
-
          <div class="col-md-4" id="button-down">
             <button type="button" id="sign-in-button"><a><span class ="glyphicon glyphicon"></span>Sign in!</a></button>
         </div>
-
     </div> <!--close main header -->
+        <div class="row">
+            <div class="space">
+            </div>
+        </div>
         
-        <div class="row">
-            <div class="space">
+        <div class="row">  <!--creates inside line for style Auth Yours -->
+            <div class="col-sm-3 col-md-3 col-lg-3">
+            </div> 
+            <div class="col-sm-6 col-md-6 col-lg-6" id="lineone">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12" id="linetwo">
+                    </div>  <!-- style for inside border for css -->
+                </div>
+                    <p class="atitle">WINE OF LIFE</p> 
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12" id="linetwo">
+                    </div>  <!-- style for inside border for css -->
+                </div>
             </div>
-        </div>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+            </div>
+        </div> <!-- close row to create line -->
 
         <div class="row">
             <div class="space">
             </div>
         </div>
-
+        
         <div class="row-small">
             <div class="panel panel-success">
                 <div class="panel-heading"  id="panelchange">
@@ -60,10 +70,8 @@
                     <div class="col-sm-6 col-md-6 col-lg-6" id="border">
                         <p>Use our basic search to find out details about your favorite wine, enter basic information to find out ratings, reviews, and food parings for your glass of wine.</p>
                     </div>
-
                     <div class="col-sm-1 col-md-1 col-lg-1">
                     </div>
-
                     <div class="col-sm-5 col-md-5 col-lg-5">
                         <div class="searchbox">
                             <div class="container-1">
@@ -80,7 +88,6 @@
             </div>
         </div> <!--close row small -->
   <!--   </div> close container two -->
-
     <!--Wine Information-->
 
     <div class="row-small-hide">
@@ -91,19 +98,79 @@
                     <h4 class="panel-title" style="font-size: 20px">Top Wine Results</h4>
                 </div>
                 <div class="panel-body" id="wine-div"></div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+<div class="row">  <!--creates inside line for style Auth Yours -->
+            <div class="col-sm-3 col-md-3 col-lg-3">
+            </div> 
+            <div class="col-sm-6 col-md-6 col-lg-6" id="lineon">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12" id="linetwo">
+                    </div>  <!-- style for inside border for css -->
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+            </div>
+        </div> <!-- close row to create line -->
+        <br>
+        <br>
+
+
+
+<div class="row-small">
+            <div class="panel panel-success">
+                <div class="panel-heading"  id="panelchange">
+                    <h4 class="panel-title" style="font-size: 24px">View Your Personal Wine Cellar</h4>
+                </div>
+                <div class="panel-body" id="paperbackground">   
+                    <div class="col-sm-6 col-md-6 col-lg-6" id="border">
+                        <p>Your personal wine cellar is available to view at anytime.  Wine information is personalized for you always!</p>
+                    </div>
+                    <div class="col-sm-1 col-md-1 col-lg-1">
+                    </div>
+                    <div class="col-sm-5 col-md-5 col-lg-5">
+                        <div class="searchbox">
+                            <div class="container-1">
+                                <span class="icon"><i class="fa fa-search"></i></span>
+                                <input type="search" id="wine-input" type="submit" placeholder="Search Wine..."/>
+                            </div>
+                        </div>
+                        <br>
+        <!--submit button-->
+                        <input id="select-wine" type="submit" value="Search Wine">
+                        <input id="clear-wine" type="button" value="Clear Results">
+                    </div>  
+                </div> <!--panel body-->
+            </div>
+        </div> <!--close row small -->
+
+
+    <div class="row-small-hide">
+        <div class="col-sm-12">
+            <br>
+            <div class="card card-body">
+                <div class="panel-heading" id="panelchange">
+                    <h4 class="panel-title" style="font-size: 20px">Your Wine Cellar</h4>
+                </div>
+                <div class="panel-body" id="wine-div"></div>
                 
             </div>
         </div>
     </div>
+
+
+
+
 </div> <!-- close container two -->
 
 <div class="container footer">
         <div class="row">
-
+        <br>
             <div class="col-sm-4 col-md-4 col-lg-4">
-                <p><img class="img-responsive" src="app/public/images/WhiteVNoBackground.png" alt="OurLogo" id="footerlogo"></p>
-
-                <p>Vinum Vitae</p>
+                <p><img class="img-responsive" src="app/public/images/WhiteVNoBackground.png" alt="OurLogo"  id="footerlogo"></p>
             </div>
 
             <div class="col-sm-4 col-md-4 col-lg-4" id ="develop">
@@ -114,21 +181,21 @@
             </div>
 
             <div class="col-sm-4 col-md-4 col-lg-4" id ="ourapp">
-                <p>Misc Info</p>
-                <p>Join Our Mailing List</p>
-                <p>More Info</p>
+                <p>Vinum Vitae</p>
+                <p>     -Wine Of Life</p>
+                <p></p>
             </div>
         </div>
+        <br>
         <div class = "row" id="copyright">
             <div class="col-sm-12 col-md-12 col-lg-12" id ="copyright">
-                <p>© 2017, VinumVitae, All rights reserved</p>
+                <p>© 2017, Vinum Vitae, All rights reserved</p>
             </div>
         </div>
-
     </div> <!--footer-->
     <form method="POST" action="/wines" class="button-size" id="wineForm">
         <input input type="hidden" type="text" name="wine_id" value="" id="userSelection"><br>
-        <button type="submit" class="btn btn-default">Devour it!</button>
+        <button type="submit" class="btn btn-default">Wine It</button>
     </form>
 
 <script type="text/javascript" src="searchwinefunction.js"></script>
