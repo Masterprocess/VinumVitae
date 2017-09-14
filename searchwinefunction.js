@@ -1,6 +1,8 @@
 $(document).ready(function(){
     $(".row-small-hide").hide();
     $("#wineForm").hide();
+    $(".tooManyMessage").hide();
+    $(".noResults").hide();
 
         var wineCounter = 0;
         finalWineSelection = [];
@@ -17,10 +19,14 @@ $(document).ready(function(){
                 }).done(function(response){
                     parsed = JSON.parse(response);
                     console.log(parsed);
-                    for (var i = 0; i < parsed.wines.length; i++)
+                    console.log(parsed.meta.results);
+                    //console.log("Parse wine length" + parsed.wines.length);
+
+                    if(parsed.meta.results > 0) {
+                        for (var i = 0; i < parsed.wines.length; i++)
                         {
                         wineCounter++;
-                        console.log(wineCounter);
+                        console.log("winecount" + wineCounter);
                         if (wineCounter < 16)
                             {
                             var wellSection = $("<div>");
@@ -41,7 +47,6 @@ $(document).ready(function(){
                             $("#wine-well-" + wineCounter)
                             .append("<p>" + parsed.wines[i].price + "<p>");
 
-
                             var picture = parsed.wines[i].image;
                             var wineImageContain = $("<div>");
                             wineImageContain.addClass("wineimage");
@@ -55,12 +60,23 @@ $(document).ready(function(){
 
                         if (wineCounter > 15)
                             {
-                            alert("Try to narrow your search - too many results");
-                            $(".row-small-hide").hide();
-                            wineCounter = 0;
                             $("#wine-div").empty();
+                            $(".row-small-hide").hide();
+                            $(".tooManyMessage").show();
+                            //document.getElementById("panelchange").innerHTML = "Narrow"
+                            //alert("Try to narrow your search - too many results");
+                            wineCounter = 0;
                             }
                         }
+                        }
+                        else 
+                        {
+                         $(".row-small-hide").hide();
+                         $(".tooManyMessage").hide();
+                         $(".noResults").show();
+                        }
+
+
                     $(".well").click(function(event){
                      event.preventDefault();
                      var wineInfo = $(this).attr("wineInfo");
