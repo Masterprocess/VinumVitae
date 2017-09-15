@@ -92,7 +92,7 @@ router.get('/', require('connect-ensure-login').ensureLoggedIn('login'), functio
 router.post('/new', (req,res) => {
     var newUser = {
         username: req.body.username,
-        password: User.generateHash(req.body.password)
+        password: User.generateHash(req.body.pwd)
     }
 
     User.create(newUser).then(() => {
@@ -100,13 +100,6 @@ router.post('/new', (req,res) => {
     })
 }); 
 
-router.get('/login', function (req, res) {
-    res.render('login');
-});
-
-router.get('/new'), function(req,res){
-    res.render('signup')
-}
 
 router.post('/login', function(req, res, next) {
     passport.authenticate('local', function(err, user, info) {
