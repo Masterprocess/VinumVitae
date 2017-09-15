@@ -267,6 +267,19 @@ h4 {
   margin-top: 5px;
 }
 
+#select-wine,
+#clear-wine 
+  {
+  border: 1px solid black;
+  color: #303030;
+  font-size: 18px;
+  background-color: #68838B;
+  cursor: auto;
+  border-radius: 10px;
+  width: 120px;
+  height: 40px;
+}
+
 .atitle {
   text-align: center;
   font-family: "Courier New";
@@ -274,8 +287,6 @@ h4 {
   color: white;
  
 }
-
-
 
 .custom-button {
    text-align: center;
@@ -350,6 +361,23 @@ h4 {
 
 }
 
+#wine-input {
+  width:50%;
+  height: 40px;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 20px;
+  resize: none;
+  float: left;
+}
+
+.fa-search{
+  float: left;
+  padding-right: 7px;
+  padding-top: 7px;
+}
+
 #stylebox {
   background: #1a1a1a;
   border: black;
@@ -370,6 +398,20 @@ h4 {
   text-align: center;
 }
 
+#user-db 
+   {
+  border: 1px solid black;
+  color: #303030;
+  font-size: 18px;
+  background-color: #68838B;
+  cursor: auto;
+  border-radius: 10px;
+  width: 220px;
+  height:50px;
+  float: left;
+}
+
+
 .img-frontpage {
   height: 50%;
   width: 100%;
@@ -388,6 +430,13 @@ h4 {
   letter-spacing: 3px;
   padding-top: 10px;
 }
+
+.panel-body{
+   text-align: center;
+   font-size: 18px;
+   font-style: italic;
+}
+
 #copyright {
   border-right: ridge 3px #e4e4e4;
 }
