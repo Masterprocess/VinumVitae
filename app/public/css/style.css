@@ -398,6 +398,8 @@ h4 {
   text-align: center;
 }
 
+
+
 #user-db 
    {
   border: 1px solid black;
@@ -410,7 +412,6 @@ h4 {
   height:50px;
   float: left;
 }
-
 
 .img-frontpage {
   height: 50%;
@@ -431,6 +432,11 @@ h4 {
   padding-top: 10px;
 }
 
+#copyright {
+  border-right: ridge 3px #e4e4e4;
+}
+
+
 .panel-body{
    text-align: center;
    font-size: 18px;
@@ -440,6 +446,7 @@ h4 {
 #copyright {
   border-right: ridge 3px #e4e4e4;
 }
+
  #wineForm {
     background-color: #262626;
  }
