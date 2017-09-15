@@ -1,28 +1,53 @@
-
 const bcrypt = require('bcrypt-node');
 
 module.exports = (sequelize, DataTypes) => {
     var User = sequelize.define('User', {
         username: {
             type: DataTypes.STRING,
-            validate: { len: [6,20] }
+            allowNull:false,
+            // unique: true,
+            validate: {
+                len: [6,50],
+            }        
         },
         password: {
             type: DataTypes.STRING,
-            validate: { len: [8,120]}
-        }
+            allowNull:false,
+            validate: {
+                len: [6,100],
+            }
+        },
+        online: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false,
+        },
+        
     })
 
-    User.associate = (models) => {
+   // User.associate = (models) => {
         
-        User.hasMany(models.Cellar, {
-            onDelete: "CASCADE"
-        }),
+      //  User.hasMany(models.cellar, {
+       //     onDelete: "CASCADE"
+       // })      
+   // }
+
+    User.prototype.printStuff = function(){
+        console.log(this.username, this.password)
     }
 
     User.generateHash = function(password) {
         return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
     };
+    
+    User.prototype.comparePassword = function(password, fn){
+        var hash = this.password;
+        
+        return bcrypt.compare(password, hash, function(err, res) {
+            // console.log(res)
+            fn(err,res)
+        })
+    }
 
     return User;
 }

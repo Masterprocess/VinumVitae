@@ -2,12 +2,14 @@
 const express = require('express');
 const models = require('../models');
 const db = models.cellar;
+console.log('done1')
 const router = express.Router();
+console.log('done2')
 
-router.post("/burgers/create", function(req, res) {
+router.post("/wines/create", function(req, res) {
     // edited burger create to add in a burger_name
     db.Wines.create({
-      burger_name: req.body.wine_name
+      wine_name: req.body.wine_name
     })
     // pass the result of our call
     .then(function(dbWines) {

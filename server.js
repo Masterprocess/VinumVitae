@@ -11,7 +11,16 @@ const path = require('path');
 //const http = require('http');
 const passport = require('passport'),
     LocalStrategy = require('passport-local').Strategy;
-    // INITIALIZING SERVER
+    
+const db = require('./app/models');
+const fs = require('fs');
+const sequelize_fixtures = require('sequelize-fixtures');
+
+// External Logic
+// -------------------------------------------------------------
+
+
+// INITIALIZING SERVER
 // -------------------------------------------------------------
 const port = process.env.PORT || 8080;
 
@@ -47,16 +56,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 // -------------------------------------------------------------
 app.use('/', require(path.join(__dirname,'./app/routes/htmlController.js')));
 app.use('/users', require(path.join(__dirname,'./app/routes/loginController.js')));
-const fs = require('fs');
-const sequelize_fixtures = require('sequelize-fixtures');
-const db = require('./app/models');
-
-
-// External Logic
-// -------------------------------------------------------------
-
-
-
+//app.use('/wines', require(path.join(__dirname,'./app/routes/winesController.js')));
 
 
 
@@ -65,16 +65,8 @@ const db = require('./app/models');
 
 
 db.sequelize.sync({ force: true }).then(function() {
-    app.listen(PORT, function() {
-      console.log("App listening on PORT " + PORT);
+    app.listen(port, function() {
+      console.log("App listening on PORT " + port);
     });
   });
 
-var sequelize = new Sequelize(foo, bar, baz);
-sequelize.authenticate().then(function() {
-  console.log('Database connected and authenticated!');
-  return true;
-}).catch(function(err) {
-  console.error('Failed to connect and authenticate', err);
-  return false;
-});
