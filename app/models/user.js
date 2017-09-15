@@ -18,9 +18,6 @@ module.exports = (sequelize, DataTypes) => {
         User.hasMany(models.Cellar, {
             onDelete: "CASCADE"
         }),
-        User.hasMany(models.Cooler, {
-            onDelete: "CASCADE"
-        })
     }
 
     User.generateHash = function(password) {

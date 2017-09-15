@@ -11,13 +11,12 @@ router.get('/signUp', function (req, res) {
     res.render('signUp')
 })
 
-
-
-router.get('/userProfile', function (req, res) {
-    res.render('userProfile')
-})
-
 router.get('/home', function (req, res) {
-    res.render('')
+    res.render('userHomePageAndCellar')
 })
+
+router.get('/search', function (req, res) {
+    res.render('wineBasicSearch')
+})
+
 module.exports = router;
