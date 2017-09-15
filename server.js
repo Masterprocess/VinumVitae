@@ -11,15 +11,7 @@ const path = require('path');
 //const http = require('http');
 const passport = require('passport'),
     LocalStrategy = require('passport-local').Strategy;
-const db = require('./app/models');
-const fs = require('fs');
-const sequelize_fixtures = require('sequelize-fixtures');
-
-// External Logic
-// -------------------------------------------------------------
-
-
-// INITIALIZING SERVER
+    // INITIALIZING SERVER
 // -------------------------------------------------------------
 const port = process.env.PORT || 8080;
 
@@ -31,9 +23,9 @@ app.engine('handlebars', hdbs({
 app.set('view engine','handlebars');
 app.set('views', path.join(__dirname,'app/views/'));    
 // app.set('trust proxy', 1) // trust first proxy 
-app.use(cookieParser('vino forever')) 
+app.use(cookieParser('keyboard cat')) 
 app.use(session({
-    secret: 'vino forever',
+    secret: 'keyboard cat',
     resave: false,
     saveUninitialized: false
 }))
@@ -55,15 +47,34 @@ app.use(bodyParser.urlencoded({extended: false}));
 // -------------------------------------------------------------
 app.use('/', require(path.join(__dirname,'./app/routes/htmlController.js')));
 app.use('/users', require(path.join(__dirname,'./app/routes/loginController.js')));
+const fs = require('fs');
+const sequelize_fixtures = require('sequelize-fixtures');
+const db = require('./app/models');
+
+
+// External Logic
+// -------------------------------------------------------------
+
+
+
 
 
 
 // STARTING DB AND SERVER
 // -------------------------------------------------------------
 
-/*db.sequelize.sync(
-    // {force: true}   
-).then(() => {*/
-    app.listen(port, () => {
-        console.log('listen to port',port)
-    })
+
+db.sequelize.sync({ force: true }).then(function() {
+    app.listen(PORT, function() {
+      console.log("App listening on PORT " + PORT);
+    });
+  });
+
+var sequelize = new Sequelize(foo, bar, baz);
+sequelize.authenticate().then(function() {
+  console.log('Database connected and authenticated!');
+  return true;
+}).catch(function(err) {
+  console.error('Failed to connect and authenticate', err);
+  return false;
+});

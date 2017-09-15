@@ -6,5 +6,6 @@ module.exports = (sequelize, DataTypes) => {
         WineDescription: {
             type: DataTypes.TEXT
         }
-
     })
+
+    };
