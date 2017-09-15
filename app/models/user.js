@@ -10,14 +10,6 @@ module.exports = (sequelize, DataTypes) => {
         password: {
             type: DataTypes.STRING,
             validate: { len: [8,120]}
-        },
-        name: {
-            type: DataTypes.STRING,
-            allowNull:false,
-            validate: {
-                len: [1,120],
-            },
-            defaultValue: "Pretentious Wine Collector Number 87"
         }
     })
 
@@ -26,10 +18,11 @@ module.exports = (sequelize, DataTypes) => {
         User.hasMany(models.Cellar, {
             onDelete: "CASCADE"
         }),
-        User.hasMany(models.Cooler, {
-            onDelete: "CASCADE"
-        })
     }
+
+    User.generateHash = function(password) {
+        return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+    };
 
     return User;
 }
