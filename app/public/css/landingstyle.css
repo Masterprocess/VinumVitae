@@ -1,0 +1,100 @@
+
+
+.navpic {
+  float: left;
+  width: 15%;
+  display: block;
+  margin: auto;
+}
+
+
+#form {
+  border-radius: 25px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  opacity: .80;
+  margin-right: 20%;
+  margin-left: 20%;
+  margin: 10% 20% 20% 20%;
+}
+
+.main {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.topleft {
+    position: absolute;
+    top: 10%;
+    left: 2%;
+}
+
+
+.midleft {
+    position: absolute;
+    top: 65%;
+    left: 2%;
+}
+
+.bottomishleft {
+    position: absolute;
+    top: 120%;
+    left: 2%;
+}
+
+.bottomleft {
+    position: absolute;
+    top: 275%;
+    left: 2px;
+}
+
+
+.top-nav {
+  padding: 10px 0;
+  background-image: url("../images/texturebackground.jpg");
+  width:101%;
+}
+
+.top-nav a {
+  margin-right: 10px;
+  color: #68838B;
+}
+
+.panel-title {
+  text-align:center;
+}
+
+
+
+.footer {
+  background-color: #262626;
+  border-top: solid 2px #A9A9A9;
+  color: #fff;
+  text-align: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;  
+  top: 0;
+  left: 0;
+}
+
+.img-frontpage {
+  height: 50%;
+  width: 100%;
+}
+#footerlogo {
+  height: 75px;
+  width: 75px;
+  padding: 15px;
+  align-items: center;
+}
+.copyright {
+  border-right: ridge 3px #e4e4e4;
+
+}
+
