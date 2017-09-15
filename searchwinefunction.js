@@ -21,6 +21,8 @@ $(document).ready(function(){
                     console.log(parsed);
                     console.log(parsed.meta.results);
                     //console.log("Parse wine length" + parsed.wines.length);
+                    $(".tooManyMessage").hide();
+                    $(".noResults").hide();
 
                     if(parsed.meta.results > 0) {
                         for (var i = 0; i < parsed.wines.length; i++)
@@ -33,7 +35,6 @@ $(document).ready(function(){
                             wellSection.addClass("well");
                             wellSection.attr("id", "wine-well-" + wineCounter);
                             wellSection.attr("wineInfo", JSON.stringify(parsed.wines[i]));
-                            //wellSection.attr("src", parsed.wines[i].image);
                             console.log(wellSection);
                             $("#wine-div").append(wellSection);
                             $("#wine-well-" + wineCounter)
@@ -52,7 +53,6 @@ $(document).ready(function(){
                             wineImageContain.addClass("wineimage");
                             var wineImage = $("<img>");
                             wineImageContain.append(wineImage);
-                            //wineImage.wrap("<div class ='sideImage'></div>");
                             wineImage.attr("src", picture);
                             $("#wine-well-" + wineCounter)
                             .append(wineImageContain);
@@ -61,6 +61,7 @@ $(document).ready(function(){
                         if (wineCounter > 15)
                             {
                             $("#wine-div").empty();
+                            $(".noResults").hide();
                             $(".row-small-hide").hide();
                             $(".tooManyMessage").show();
                             //document.getElementById("panelchange").innerHTML = "Narrow"
@@ -75,7 +76,6 @@ $(document).ready(function(){
                          $(".tooManyMessage").hide();
                          $(".noResults").show();
                         }
-
 
                     $(".well").click(function(event){
                      event.preventDefault();
