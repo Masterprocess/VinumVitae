@@ -16,10 +16,10 @@ $(document).ready(function(){
                     for (var i = 0; i < parsed.actions.length; i++){ 
                         var testUnpopulated = parsed.actions[i].grammar.subject_blurb;
                         console.log(testUnpopulated);
-                        if (testUnpopulated.length > 1){
+                        if (typeof(parsed.actions[i].grammar.subject_blurb) != "undefined"){
 
                         console.log(parsed.actions[i].grammar.subject_blurb);
-                    var wellSection = $("<div>");
+                        var wellSection = $("<div>");
                         wellSection.addClass("well");
                         wellSection.attr("id", "post-well-");
                         console.log(wellSection);
@@ -28,8 +28,8 @@ $(document).ready(function(){
                         wellSection.append("<p>" + "Wine Name:  " + parsed.actions[i].grammar.subject_name + "<p>");
                         wellSection.append("<p>" + "Rating From User:  " + parsed.actions[i].grammar.subject_rating + "<p>");
                         wellSection.append("<p>" + parsed.actions[i].grammar.subject_blurb + "<p>");
-                    } // end if
-	                    } //end for loop
+                        } // end if
+	                   } //end for loop
 
             		});
             	}

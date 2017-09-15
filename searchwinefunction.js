@@ -42,11 +42,11 @@ $(document).ready(function(){
                             $("#wine-well-" + wineCounter)
                             .append("<p>" + parsed.wines[i].type + "<p>");
                             $("#wine-well-" + wineCounter)
-                            .append("<p>" + parsed.wines[i].vintage + "<p>");
+                            .append("<p>" + "Vintage: " + parsed.wines[i].vintage + "<p>");
                             $("#wine-well-" + wineCounter)
-                            .append("<p>" + parsed.wines[i].region + "<p>");
+                            .append("<p>" + "From This Region: " + parsed.wines[i].region + "<p>");
                             $("#wine-well-" + wineCounter)
-                            .append("<p>" + parsed.wines[i].price + "<p>");
+                            .append("<p>" + "Average Price: " + parsed.wines[i].price + "<p>");
 
                             var picture = parsed.wines[i].image;
                             var wineImageContain = $("<div>");
@@ -81,6 +81,7 @@ $(document).ready(function(){
                      event.preventDefault();
                      var wineInfo = $(this).attr("wineInfo");
                      console.log(wineInfo);
+                     alert(wineInfo);
                      $("#userSelection").attr("value", wineInfo);
                      $("#wineForm").submit();
                      
