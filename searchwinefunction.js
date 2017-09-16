@@ -81,7 +81,7 @@ $(document).ready(function(){
                      event.preventDefault();
                      var wineInfo = $(this).attr("wineInfo");
                      console.log(wineInfo);
-                     alert(wineInfo);
+                     // alert(wineInfo);
                      $("#userSelection").attr("value", wineInfo);
                      $("#wineForm").submit();
                      
