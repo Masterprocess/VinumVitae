@@ -428,9 +428,12 @@ h4 {
 }
 
 
-.img-frontpage {
-  height: 50%;
+/* .img-frontpage {
+  height: 250px;
   width: 100%;
+} */
+.quickFixProjectDay {
+  height: 160px;
 }
 #footerlogo {
   height: 100px;

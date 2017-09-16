@@ -14,13 +14,13 @@
 	</script>
 	<link href="https://fonts.googleapis.com/css?family=Proxima-Nova" rel="stylesheet">
 	<link href="https://bootswatch.com/spacelab/bootstrap.min.css" rel="stylesheet" type="text/css">
-	<link href="/css/style.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
 	<meta content="width=device-width, initial-scale=1" name="viewport">
 	<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js">
-	<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-    <link rel="manifest" href="/icons/manifest.json">
+	<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="icons/manifest.json">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5 ">
     <meta name="theme-color" content="#ffffff ">
 
@@ -32,12 +32,12 @@
 
 	<div class="row" id="main-header">
 		<div class="col-md-2" id="logo-image">
-			<img src="/images/WineLogo.png" alt="VV Logo" style="width:210px; height: 85px; margin-top: 10px">
+			<img src="images/WineLogo.png" alt="VV Logo" style="width:210px; height: 85px; margin-top: 10px">
 			<br>
 			<br>
 			<br>
-			<a href="/signUp"><button type="button" id="sign-in-button"><span class ="glyphicon glyphicon"></span>Sign in!</a></button>
-		</div>  <!-- close static col for header -->
+			<button type="button" id="sign-in-button"><span class ="glyphicon glyphicon"></span><a href="/signUp">Log In</a></button>
+		</div>  <!-- close static col for header bootstrap function to get button click -->
 		
 		<div class="col-md-10">
 			<div class="carousel fade-carousel slide" data-interval="5000" data-ride="carousel" id="bs-carousel">
@@ -58,7 +58,7 @@
 							<div class="col-md-7">
 								<div class="uppertext">
 									<h1>Vinum Vitae</h1>
-									<h2>   -Wine of Life</h2>
+									<h2>   -Wine Of Life</h2>
 									<h3>A personalized wine recording system that remembers and records your favorite wines.</h3>
 								</div>
                     			<div>
@@ -68,7 +68,7 @@
 			        		</div> <!--end col for text-->
 
 			        		<div class="col-md-5">
-			        			<img src="/images/sunset.jpg" alt="Sonoma Sunset" style="width:500px; height: 270px; margin-top: 10px">
+			        			<img src="images/sunset.jpg" alt="Sonoma Sunset" style="width:500px; height: 270px; margin-top: 10px">
 			        		</div> <!--close col 5 for image -->
 			      		</div> <!--close row-->
 					</div>  <!-- end of slide one div -->
@@ -81,7 +81,7 @@
 							<div class="col-md-7">
 								<div class="uppertext">
 									<h1>Vinum Vitae</h1>
-									<h2>   -Wine of Life</h2>
+									<h2>   -Wine Of Life</h2>
 									<span class="icon-heart"></span> icon-heart
 									<h3>Record your top wines, find current reviews, and all information relevant to your glass of vino!</h3>
 								</div>
@@ -92,7 +92,7 @@
 			       			</div> <!-- end div for col 7 -->
 
 			       			<div class="col-md-5">
-			        			<img src="/images/winebarrels.jpg" alt="Red Wine" style="width:500px; height: 270px; margin-top: 10px">
+			        			<img src="images/winebarrels.jpg" alt="Red Wine" style="width:500px; height: 270px; margin-top: 10px">
 			       			</div> <!--close col 5 for image -->
 			      		</div> <!--close row-->
 					</div>
@@ -105,7 +105,7 @@
 							<div class="col-md-7">
 								<div class="uppertext">
 									<h1>Vinum Vitae</h1>
-									<h2>   -Wine of Life</h2>
+									<h2>   -Wine Of Life</h2>
 									<h3>Prefer beer?  You are in the majority!</h3> <h3> Find and record your favorite beer here.  Everything you need to know about your pint is available now.</h3>
 								</div>
                     			<div>
@@ -115,7 +115,7 @@
 			       			</div> <!-- end div for col 7 -->
 
 			       			<div class="col-md-5">
-			        			<img src="/images/beerimage.jpg" alt="Beer" style="width:500px; height: 270px; margin-top: 10px">
+			        			<img src="images/beerimage.jpg" alt="Beer" style="width:500px; height: 270px; margin-top: 10px">
 			       			</div> <!--close col 5 for image -->
 			      		</div> <!--close row-->
 					</div>
@@ -173,22 +173,37 @@
 					<div class="col-sm-6 col-md-6 col-lg-6" id="border">
 						<p>A Valuable Service That You'll Always Return For All Of Your Wine And Beer Information Storage Needs!  Vinum Vitae is the premier website for all wine and beer information. Find out about that rare vintage or a new IPA. And when you decide you need more, login to access your distinctive list and order more.</p>
 						<br>
+
+					<!-- 	<	================> -->
 						<div class = "row">
-							<div class="col-sm-3 col-md-3 col-lg-3"></div>
-							<div class="col-sm-6 col-md-6 col-lg-6">
-								<a href="/search"><button type="button" id="sign-in-button"><span class ="glyphicon glyphicon"></span>Sign in!</button></a>
-								</div>
-							<div class="col-sm-3 col-md-3 col-lg-3"></div>
+							<div class="col-sm-1 col-md-1 col-lg-1">
+							</div>
+							<div class="col-sm-11 col-md-11 col-lg-11" id="stylebox">
+								<p id="signininspiration">GET YOUR PERSONAL WINE CELLAR.</p>
+								<button type="button" id="sign-in-button"><span class ="glyphicon glyphicon"></span><a href="/search">Log In</a></button>
+							</div>
+							<!-- <div class="col-sm-4 col-md-4 col-lg-4">
+								<button type="button" id="sign-in-button"><span class ="glyphicon glyphicon"></span><a href="/search">Log In</a></button>
+							</div> -->
+
+							<!-- <div class="col-sm-1 col-md-1 col-lg-1">
+							</div> -->
+
 						</div>
 					</div>
+
+					<!-- <<+++++++? -->
 					<div class="col-sm-1 col-md-1 col-lg-1">
 					</div>
 					<div class="col-sm-5 col-md-5 col-lg-5">
-						<p><img class="img-frontpage" src="/images/newwineglass.jpg" alt="Wine Glass"></p>
+						<p><img class="img-frontpage img-responsive" src="images/newwineglass.jpg" alt="Wine Glass"></p>
 					</div>
-				</div>
+				</div> <!--close panel paper background -->
 			</div>
-		</div>
+		</div>  <!--close row small -->
+
+
+
 
 		<div class="row">
 			<div class="space">
@@ -207,10 +222,10 @@
 					<div class="col-sm-1 col-md-1 col-lg-1">
 					</div>
 					<div class="col-sm-5 col-md-5 col-lg-5">
-						<p><img class="img-frontpage" src="/images/winetop.jpg" alt="Screenshot of alcohol database"></p>
+						<p><img class="img-frontpage img-responsive quickFixProjectDay" src="images/winetop.jpg" alt="Screenshot of alcohol database"></p>
 					</div>
 				</div>
-			</div>
+			
 		</div>
 		<div class="row">
 			<div class="space">
@@ -243,19 +258,48 @@
 					<h4 class="panel-title" style="font-size: 20px">Discover New Wines</h4>
 					</div>
 				<div class="panel-body" id="paperbackground">	
-					<div class="col-sm-12 col-md-12 col-lg-12" id="border">
-						<p>See what critics are saying about the latest greatest wines</p>
+					<div class="col-sm-12 col-md-12 col-lg-12" id="select-posts" type="submit">
+						<p>Click here to read the most current reviews from people and what they are posting about the latest greatest wines.</p>
+						<!-- <input id="select-posts" type="submit" value="Posts"> -->
 					</div>
 				</div>
-				</div>
 			</div>
+	</div>  
+	<!-- !==close gen search> -->
 
+		<div class="row">
+			<div class="space">
+			</div>
 		</div>
+
+		<div class="row">
+			<div class="space">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="space">
+			</div>
+		</div>
+	
 <!-- 
 	============== -->
 
+	<div class="row-small-hide">
+        <div class="col-sm-12">
+            <br>
+            <div class="card card-body">
+                <div class="panel-heading" id="panelchange">
+                <h4 class="panel-title" style="font-size: 20px">What People Are Posting About Wine Favorites</h4>
+                </div>
+                <div class="panel-body" id="post-div"></div>
+            </div>
+             <input id="clear-posts" type="button" value="Close Posts">
+        </div>
+    </div>
 
-
+    <!-- 
+	============== -->
 
 		<div class="row">
 			<div class="space"></div>
@@ -272,31 +316,40 @@
 			</div>
 		</div>
 
+</div>
+</div>
+
+</div>
 
 	<div class="container footer">
 		<div class="row">
-			<div class="col-sm-4 col-md-4 col-lg-4" id="footerlogo">
-				<p><img class="img-responsive" src="/images/WhiteVNoBackground.png" alt="OurLogo"></p>
-				<p>Vinum Vitae</p>
+		<br>
+			<div class="col-sm-4 col-md-4 col-lg-4">
+				<p><img class="img-responsive" src="images/WhiteVNoBackground.png" alt="OurLogo"  id="footerlogo"></p>
 			</div>
 
 			<div class="col-sm-4 col-md-4 col-lg-4" id ="develop">
-				<p>Web Design & Development</p>
+				<p>Web Design And Development</p>
 				<p><a href="FahrerDesign.com"> Adrian Fahrer</a></p>
 				<p><a href="CoryLozon.com">Cory Lozon</a></p>
 				<p><a href="christopher-rackley.com">Chris Rackley</a></p>
 			</div>
 
 			<div class="col-sm-4 col-md-4 col-lg-4" id ="ourapp">
-				<p>Misc Info</p>
-				<p>Join Our Mailing List</p>
-				<p>More Info</a></p>
+				<p>Vinum Vitae</p>
+				<p>     -Wine Of Life</p>
+				<p></p>
+			</div>
+		</div>
+		<br>
+		<div class = "row" id="copyright">
+			<div class="col-sm-12 col-md-12 col-lg-12" id ="copyright">
+				<p>© 2017, Vinum Vitae, All rights reserved</p>
 			</div>
 		</div>
 
-		<div class = "row" id="copyright">
-			<p>© 2017, VinumVitae, All rights reserved</p>
-		</div>
 	</div> <!--footer-->
+	
+	<script type="text/javascript" src="js/function.js"></script>
 </body>
 </html>
