@@ -104,7 +104,7 @@ router.post('/new', (req,res) => {
     }
 
     models.User.create(newUser).then(() => {
-        res.end();
+        res.redirect('/search');
     })
 }); 
 

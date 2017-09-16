@@ -1,19 +1,32 @@
 
 const express = require('express');
-const models = require('../models');
-const db = models.cellar;
-console.log('done1')
+const session = require('express-session');
 const router = express.Router();
-console.log('done2')
+const models = require('../models');
+const Cellar = models.cellar;
 
-router.post("/wines/create", function(req, res) {
-    // edited burger create to add in a burger_name
-    db.Wines.create({
-      wine_name: req.body.wine_name
-    })
-    // pass the result of our call
-    .then(function(dbWines) {
+router.post("/create", (req, res) => {
+    var newWine = {
+      wineName: req.body.wine_name,
+      wineCode: req.body.wine_code,
+      wineLink: req.body.wine_link,
+      winePrice: req.body.wine_price,
+      wineRegion: req.body.wine_region,
+      wineRank: req.body.wine_rank,
+      wineType: req.body.wine_type,
+      wineVarietal: req.body.wine_varietal,
+      wineVintage: req.body.wine_vintage,
+      wineWinery: req.body.wine_winery,
+      wineWineryID: req.body.wine_wineryID
+
+    }
+    models.Cellar.create(newWine).then(() => {
       // log the result to our terminal/bash window
-      console.log(dbWines);
-    });
+     /* models.db.findAll({}).then((allWines) => {
+        res.json(wines);
+        res.render('/search');
+    });*/
   });
+});
+
+  module.exports = router;
