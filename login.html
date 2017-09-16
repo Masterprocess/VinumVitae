@@ -1,101 +1,174 @@
+
 <!DOCTYPE html>
 
+
 <html lang="en">
+
+
 <head>
-	<title>Bootstrap Example</title>
-	<meta charset="utf-8">
-	<meta content="width=device-width, initial-scale=1" name="viewport">
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-	</script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
-	</script>
-	<link href="app/public/css/lstyle.css" rel="stylesheet" type="text/css">
+  <title>Logon/Registration</title>
+  <meta charset="utf-8">
+
+  <meta content="width=device-width, initial-scale=1"
+    name="viewport">
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    rel="stylesheet">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+
+  </script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+
+  </script>
+  <link href="app/public/css/lstyle.css"
+    rel="stylesheet"
+    type="text/css">
+
 </head>
 
 <body>
 
-<div >
-<img class="navpic" src="app/public/images/WineLogo.png"> 
-</div> 
+  <div class="navbar navbar-default navbar-fixed-top">
 
-<div class="container-fluid top-nav text-right"><a href="#" class="text-uppercase" data-toggle="modal" data-target="#login-modal"><span id=link>Home</span></a></div>
+    <div class="container">
+
+      <div class="navbar-header">
+
+          <img class="navpic" src="app/public/images/WineLogo.png">
+
+      </div>
+      <button class="button" type="login">Home</button>
+    </div>
+  </div>
+  <br>
+
+  <br>
+
+  <br>
+
+  <br>
 
 
-<div class="container1">
-<div class="row">
-<div class="col-md-6">  
+  <div class="container1">
 
-<div id=form>
-<h3>Create an Account</h3>
-  <form action="/action_page.php">
-    <label for="uname">Username</label>
-    <input type="text" id="uname" name="username" placeholder="Enter Your Username" required>
-
-    <label for="pwd">Password</label>
-    <input type="password" id="pwd" name="pwd" placeholder="Enter Your Password" required>
-
-     <label for="pwd">Confirm Password</label>
-    <input type="password" id="pwd" name="psw-repeat" placeholder="Confirm Your Password" required>
-  
-    <input type="submit" value="Submit">
-
-  </form>
-</div>
-</div>
-<div class="col-md-6"> 
-
-<div id=form>
-<h3>Login</h3>
-  <form action="/action_page.php">
-    <label for="uname">Username</label>
-    <input type="text" id="uname" name="username" placeholder="Enter Your Username" required>
-
-    <label for="pwd">Password</label>
-    <input type="password" id="pwd" name="pwd" placeholder="Enter Your Password" required>
-
-   
-    <input type="submit" value="Login">
-  </form>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container footer">
     <div class="row">
-      <div class="col-sm-4 col-md-4 col-lg-4" id="footerlogo">
-        <p><img class="img-responsive" src="app/public/images/WhiteVNoBackground.png" alt="OurLogo"></p>
+
+      <div class="col-md-6">
+
+        <div id="form">
+          <h3>Create an Account</h3>
+
+          <form action="/action_page.php">
+            <label for="uname">Username</label>
+            <input type="text"
+              id="uname"
+              name="username"
+              placeholder="Enter Your Username"
+              required>
+
+            <label for="pwd">Password</label>
+            <input type="password"
+              id="pwd"
+              name="pwd"
+              placeholder="Enter Your Password"
+              required>
+
+            <label for="pwd">Confirm Password</label>
+            <input type="password"
+              id="pwd"
+              name="psw-repeat"
+              placeholder="Confirm Your Password"
+              required>
+
+            <input type="submit"
+              value="Submit">
+
+          </form>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+
+        <div id="form">
+          <h3>Login</h3>
+
+          <form action="/action_page.php">
+            <label for="uname">Username</label>
+            <input type="text"
+              id="uname"
+              name="username"
+              placeholder="Enter Your Username"
+              required>
+
+            <label for="pwd">Password</label>
+            <input type="password"
+              id="pwd"
+              name="pwd"
+              placeholder="Enter Your Password"
+              required>
+
+            <input type="submit"
+              value="Login">
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container footer">
+
+    <div class="row">
+
+      <div class="col-sm-4 col-md-4 col-lg-4"
+        id="footerlogo">
+        <p>
+          <img class="img-responsive"
+            src="app/public/images/WhiteVNoBackground.png"
+            alt="OurLogo">
+
+        </p>
         <p>Vinum Vitae</p>
       </div>
 
-      <div class="col-sm-4 col-md-4 col-lg-4" id ="develop">
+      <div class="col-sm-4 col-md-4 col-lg-4"
+        id="develop">
         <p>Web Design & Development</p>
-        <p><a href="FahrerDesign.com"> Adrian Fahrer</a></p>
-        <p><a href="CoryLozon.com">Cory Lozon</a></p>
-        <p><a href="christopher-rackley.com">Chris Rackley</a></p>
+        <p>
+          <a href="FahrerDesign.com">Adrian Fahrer</a>
+        </p>
+        <p>
+          <a href="CoryLozon.com">Cory Lozon</a>
+        </p>
+        <p>
+          <a href="christopher-rackley.com">Chris Rackley</a>
+        </p>
       </div>
 
-      <div class="col-sm-4 col-md-4 col-lg-4" id ="ourapp">
+      <div class="col-sm-4 col-md-4 col-lg-4"
+        id="ourapp">
         <p>Misc Info</p>
         <p>Join Our Mailing List</p>
-        <p>More Info</a></p>
+        <p>More Info</p>
       </div>
     </div>
 
-    <div class = "row" id="copyright">
+    <div class="row"
+      id="copyright">
       <p>™ © 2017, VinumVitae, All rights reserved</p>
     </div>
-  </div> <!--footer-->
-</body>
-</html>
+  </div>
+  <!-- footer -->
 
-				<div>
-					<input class="three" id="button" type="submit" value="NEXT">
-				</div>
-			</form>
-		</div>
-	</div>
+  <div>
+    <input class="three"
+      id="button"
+      type="submit"
+      value="NEXT">
+
+  </div>
 </body>
 </html>
