@@ -19,6 +19,18 @@
 	padding-left: 10px;
 }
 
+a {
+  color: black;
+}
+
+a: visited {
+  color: white;
+}
+
+a: active {
+  color: black;
+}
+
 #main-header{
   border-bottom: solid 2px #A9A9A9;
    background: url("../images/texturebackground.jpg") no-repeat center fixed;
@@ -68,9 +80,13 @@ text-align: center;
    border-radius: 10px;
 }
 
+
 #post-div {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  font-size: 15px;
+  color: #262626 ;
 }
+
 #rcorners1 {
     border-radius: 25px;
     background: #73AD21;
@@ -267,6 +283,19 @@ h4 {
   margin-top: 5px;
 }
 
+#select-wine,
+#clear-wine 
+  {
+  border: 1px solid black;
+  color: #303030;
+  font-size: 18px;
+  background-color: #68838B;
+  cursor: auto;
+  border-radius: 10px;
+  width: 120px;
+  height: 40px;
+}
+
 .atitle {
   text-align: center;
   font-family: "Courier New";
@@ -274,8 +303,6 @@ h4 {
   color: white;
  
 }
-
-
 
 .custom-button {
    text-align: center;
@@ -326,25 +353,80 @@ h4 {
   left: 0;
 }
 
-#stylebox {
-  background: #1a1a1a;
-  border: black;
-  height: 105px;
-  opacity: 1.0;
-  filter: alpha (opacity=100);
-  padding-bottom: 10px;
+.tooManyMessage {
+  background-color: #262626;
+  border: 1px solid white;
+  font-size: 24px;
+  text-align: center;
+  color: white;
+  margin-bottom: 10px;
+  margin-bottom: 10px;
+  height: 80px;
+
 }
 
-#stylebox:hover {
+.noResults {
+  background-color: #262626;
+  border: 1px solid white;
+  font-size: 24px;
+  text-align: center;
+  color: white;
+  margin-bottom: 10px;
+  margin-bottom: 10px;
+  height: 80px;
+
+}
+
+#wine-input {
+  width:50%;
+  height: 40px;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 20px;
+  resize: none;
+  float: left;
+}
+
+.fa-search{
+  float: left;
+  padding-right: 7px;
+  padding-top: 7px;
+}
+
+#stylebox {
+  background: #262626;
+  border: black;
+  height: 115px;
+  padding-bottom: 10px;
+  border-radius: 2%;
+}
+
+/*#stylebox:hover {
   opacity: 0.5;
   filter: alpha (opacity=50);
-}
+}*/
 #signininspiration {
-  font-size: 16px;
+  font-size: 18px;
   color:white;
   letter-spacing: 2px;
   text-align: center;
+
 }
+
+#user-db 
+   {
+  border: 1px solid black;
+  color: #303030;
+  font-size: 18px;
+  background-color: #68838B;
+  cursor: auto;
+  border-radius: 10px;
+  width: 220px;
+  height:50px;
+  float: left;
+}
+
 
 .img-frontpage {
   height: 50%;
@@ -364,6 +446,13 @@ h4 {
   letter-spacing: 3px;
   padding-top: 10px;
 }
+
+.panel-body{
+   text-align: center;
+   font-size: 18px;
+   font-style: italic;
+}
+
 #copyright {
   border-right: ridge 3px #e4e4e4;
 }
