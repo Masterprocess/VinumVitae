@@ -56,7 +56,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 // -------------------------------------------------------------
 app.use('/', require(path.join(__dirname,'./app/routes/htmlController.js')));
 app.use('/users', require(path.join(__dirname,'./app/routes/loginController.js')));
-//app.use('/wines', require(path.join(__dirname,'./app/routes/winesController.js')));
+app.use('/wines', require(path.join(__dirname,'./app/routes/winesController.js')));
 
 
 
