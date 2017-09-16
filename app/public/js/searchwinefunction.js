@@ -93,6 +93,7 @@ $(document).ready(function(){
                      var wine_VINTAGE = parsedJsonWineString.vintage;
                      var wine_WINERY = parsedJsonWineString.winery;
                      var wine_WINERYID = parsedJsonWineString.winery_id;
+                     var wine_IMAGE = parsedJsonWineString.image;
 
                      console.log(wineInfo);
 
@@ -108,6 +109,7 @@ $(document).ready(function(){
                      $("#wine-vintage").attr("value", wine_VINTAGE);
                      $("#wine-winery").attr("value", wine_WINERY);
                      $("#wine-wineryID").attr("value", wine_WINERYID);
+                     $("#wine-image").attr("value", wine_IMAGE);
                      
                      $("#wineForm").submit();
                      
@@ -133,3 +135,45 @@ $(document).ready(function(){
            });
 
 
+
+
+///////////////////////////////////////////////////////////////////
+                //Pushing data to cellar//
+///////////////////////////////////////////////////////////////////
+           function createWineItem(data,i){
+
+            var wineItem = $('<div class= "well well-sm">');
+            var optionDelete = $('<a>');
+
+            wineItem.addClass('wine-item');
+            wineItem.attr('id',data.wineCode);
+
+            wineItem.append("<img class='wine-avatar' src='"+data.wineImage+"'/>"
+            +"<a class='wine-info' id='"+data.wineCode+"-info' href='"+ data.wineLink+ "'>" + "<p>" + data.wineName + "</p>" +"</a>"
+            +"<p>" + data.wineVintage + "</p>"
+            )
+
+            $('#wine-cellar').append(wineItem)
+
+
+
+            
+}
+
+
+           function updateWineCellar(){
+            $('#wine-cellar').empty();
+    
+            $.get('./wines/all', (res) =>{
+                            for(i =0; i < res.length; i++){
+                                    createWineItem(res[i],i);
+                            }
+    
+                            totalWine = res.length;
+                    
+            })
+    }
+
+    $(document).ready(() => { 
+        updateWineCellar();
+    });

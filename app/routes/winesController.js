@@ -17,16 +17,20 @@ router.post("/create", (req, res) => {
       wineVarietal: req.body.wine_varietal,
       wineVintage: req.body.wine_vintage,
       wineWinery: req.body.wine_winery,
-      wineWineryID: req.body.wine_wineryID
+      wineWineryID: req.body.wine_wineryID,
+      wineImage: req.body.wine_image
 
     }
-    models.Cellar.create(newWine).then(() => {
+    models.Wine.create(newWine).then(() => {
       // log the result to our terminal/bash window
-     /* models.db.findAll({}).then((allWines) => {
-        res.json(wines);
-        res.render('/search');
-    });*/
+        res.redirect('/search');
+    });
   });
-});
+
+router.get('/all', (req,res) => {
+    models.Wine.findAll().then((data) => {
+        res.json(data)
+    })
+})
 
   module.exports = router;
