@@ -1,5 +1,5 @@
     module.exports = (sequelize, DataTypes) => {
-        var User = sequelize.define('Wine', {
+        var Wine = sequelize.define('Wine', {
             wineName: {
                 type: DataTypes.STRING
                 },
@@ -47,11 +47,12 @@
                
         })
     
-       // User.associate = (models) => {
-            
-          //  User.hasMany(models.cellar, {
-           //     onDelete: "CASCADE"
-           // })      
-       // }
-
+        /*Wine.associate = (models) => {
+            Wine.belongsTo(models.user, {
+                foreignKey: {
+                    allowNull: false,
+                }
+            })
+        }*/
+        return Wine;
     }

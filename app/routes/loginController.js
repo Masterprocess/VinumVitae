@@ -61,9 +61,11 @@ function(username, password, done) {
 // deserializing.
 
 passport.serializeUser(function(user, done) {
-    // console.log('serializing')
+    console.log(user)
+    console.log('serializing')
     return done(null, user.id);
 });
+
   
 passport.deserializeUser(function(id, done) {
     // console.log('deserializing')
@@ -75,15 +77,21 @@ passport.deserializeUser(function(id, done) {
         }
     });
 });
+
   
 
 
 // SETTING ROUTERS
 // --------------------------------------------------------------------------
 
-router.get('/', require('connect-ensure-login').ensureLoggedIn('login'), function (req, res, next) {
+router.get('/', function (req, res, next) {
+    console.log('user page',req.user)
     if (req.user) {
-        res.render('index');
+        db.User.find({
+            where: {id: req.user.id},
+        }).then(user => {
+            res.render('userHomePageAndCellar',{username:username});
+        })
    } else {
         res.redirect('/');
    }
@@ -92,14 +100,21 @@ router.get('/', require('connect-ensure-login').ensureLoggedIn('login'), functio
 router.post('/new', (req,res) => {
     var newUser = {
         username: req.body.username,
-        password: User.generateHash(req.body.pwd)
+        password: req.body.password
     }
 
-    User.create(newUser).then(() => {
+    models.User.create(newUser).then(() => {
         res.end();
     })
 }); 
 
+router.get('/login', function (req, res) {
+    res.render('wineBasicSearch');
+});
+
+router.get('/new'), function(req, res){
+    res.render('signUp')
+}
 
 router.post('/login', function(req, res, next) {
     passport.authenticate('local', function(err, user, info) {
