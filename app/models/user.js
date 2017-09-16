@@ -25,12 +25,12 @@ module.exports = (sequelize, DataTypes) => {
         
     })
 
-   // User.associate = (models) => {
+   /* User.associate = (models) => {
         
-      //  User.hasMany(models.cellar, {
-       //     onDelete: "CASCADE"
-       // })      
-   // }
+        User.hasMany(models.Cellar, {
+            onDelete: "CASCADE"
+        })      
+    } */
 
     User.prototype.printStuff = function(){
         console.log(this.username, this.password)
