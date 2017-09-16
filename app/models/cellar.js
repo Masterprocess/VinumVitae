@@ -43,6 +43,10 @@
                 type: DataTypes.TEXT,
                 allowNull: true
             },
+            wineImage: {
+                type: DataTypes.TEXT,
+                allowNull: true
+            }
 
                
         })
