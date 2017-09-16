@@ -1,4 +1,4 @@
-/*'use strict';
+'use strict';
 
 var fs        = require('fs');
 var path      = require('path');
@@ -21,7 +21,7 @@ fs
   })
   .forEach(function(file) {
     var model = sequelize['import'](path.join(__dirname, file));
-    db[model.user] = model;
+    db[model.name] = model;
   });
 
 Object.keys(db).forEach(function(modelName) {
@@ -34,4 +34,3 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 module.exports = db;
-*/

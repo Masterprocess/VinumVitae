@@ -42,11 +42,11 @@ $(document).ready(function(){
                             $("#wine-well-" + wineCounter)
                             .append("<p>" + parsed.wines[i].type + "<p>");
                             $("#wine-well-" + wineCounter)
-                            .append("<p>" + "Vintage: " + parsed.wines[i].vintage + "<p>");
+                            .append("<p>" + parsed.wines[i].vintage + "<p>");
                             $("#wine-well-" + wineCounter)
-                            .append("<p>" + "From This Region: " + parsed.wines[i].region + "<p>");
+                            .append("<p>" + parsed.wines[i].region + "<p>");
                             $("#wine-well-" + wineCounter)
-                            .append("<p>" + "Average Price: " + parsed.wines[i].price + "<p>");
+                            .append("<p>" + parsed.wines[i].price + "<p>");
 
                             var picture = parsed.wines[i].image;
                             var wineImageContain = $("<div>");
@@ -80,13 +80,37 @@ $(document).ready(function(){
                     $(".well").click(function(event){
                      event.preventDefault();
                      var wineInfo = $(this).attr("wineInfo");
+                     var jsonWineString = wineInfo
+                     var parsedJsonWineString = JSON.parse(jsonWineString)
+                     var wine_NAME = parsedJsonWineString.name;
+                     var wine_CODE = parsedJsonWineString.code;
+                     var wine_LINK = parsedJsonWineString.link;
+                     var wine_PRICE = parsedJsonWineString.price;
+                     var wine_REGION = parsedJsonWineString.region;
+                     var wine_RANK = parsedJsonWineString.snoothrank;
+                     var wine_TYPE = parsedJsonWineString.type;
+                     var wine_VARIETAL = parsedJsonWineString.varietal;
+                     var wine_VINTAGE = parsedJsonWineString.vintage;
+                     var wine_WINERY = parsedJsonWineString.winery;
+                     var wine_WINERYID = parsedJsonWineString.winery_id;
+                     var wine_IMAGE = parsedJsonWineString.image;
+
                      console.log(wineInfo);
-<<<<<<< HEAD
-                     // alert(wineInfo);
-=======
-                     alert(wineInfo);
->>>>>>> master
+
                      $("#userSelection").attr("value", wineInfo);
+                     $("#wine-name").attr("value", wine_NAME);
+                     $("#wine-code").attr("value", wine_CODE);
+                     $("#wine-link").attr("value", wine_LINK);
+                     $("#wine-price").attr("value", wine_PRICE);
+                     $("#wine-region").attr("value", wine_REGION);
+                     $("#wine-rank").attr("value", wine_RANK);
+                     $("#wine-type").attr("value", wine_TYPE);
+                     $("#wine-varietal").attr("value", wine_VARIETAL);
+                     $("#wine-vintage").attr("value", wine_VINTAGE);
+                     $("#wine-winery").attr("value", wine_WINERY);
+                     $("#wine-wineryID").attr("value", wine_WINERYID);
+                     $("#wine-image").attr("value", wine_IMAGE);
+                     
                      $("#wineForm").submit();
                      
             });
@@ -111,3 +135,45 @@ $(document).ready(function(){
            });
 
 
+
+
+///////////////////////////////////////////////////////////////////
+                //Pushing data to cellar//
+///////////////////////////////////////////////////////////////////
+           function createWineItem(data,i){
+
+            var wineItem = $('<div class= "well well-sm">');
+            var optionDelete = $('<a>');
+
+            wineItem.addClass('wine-item');
+            wineItem.attr('id',data.wineCode);
+
+            wineItem.append("<img class='wine-avatar' src='"+data.wineImage+"'/>"
+            +"<a class='wine-info' id='"+data.wineCode+"-info' href='"+ data.wineLink+ "'>" + "<p>" + data.wineName + "</p>" +"</a>"
+            +"<p>" + data.wineVintage + "</p>"
+            )
+
+            $('#wine-cellar').append(wineItem)
+
+
+
+            
+}
+
+
+           function updateWineCellar(){
+            $('#wine-cellar').empty();
+    
+            $.get('./wines/all', (res) =>{
+                            for(i =0; i < res.length; i++){
+                                    createWineItem(res[i],i);
+                            }
+    
+                            totalWine = res.length;
+                    
+            })
+    }
+
+    $(document).ready(() => { 
+        updateWineCellar();
+    });

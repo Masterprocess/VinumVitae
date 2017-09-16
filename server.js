@@ -11,6 +11,7 @@ const path = require('path');
 //const http = require('http');
 const passport = require('passport'),
     LocalStrategy = require('passport-local').Strategy;
+    
 const db = require('./app/models');
 const fs = require('fs');
 const sequelize_fixtures = require('sequelize-fixtures');
@@ -31,9 +32,9 @@ app.engine('handlebars', hdbs({
 app.set('view engine','handlebars');
 app.set('views', path.join(__dirname,'app/views/'));    
 // app.set('trust proxy', 1) // trust first proxy 
-app.use(cookieParser('vino forever')) 
+app.use(cookieParser('keyboard cat')) 
 app.use(session({
-    secret: 'vino forever',
+    secret: 'keyboard cat',
     resave: false,
     saveUninitialized: false
 }))
@@ -55,14 +56,17 @@ app.use(bodyParser.urlencoded({extended: false}));
 // -------------------------------------------------------------
 app.use('/', require(path.join(__dirname,'./app/routes/htmlController.js')));
 app.use('/users', require(path.join(__dirname,'./app/routes/loginController.js')));
+app.use('/wines', require(path.join(__dirname,'./app/routes/winesController.js')));
+
 
 
 // STARTING DB AND SERVER
 // -------------------------------------------------------------
 
-/*db.sequelize.sync(
-    // {force: true}   
-).then(() => {*/
-    app.listen(port, () => {
-        console.log('listen to port',port)
-    })
+
+db.sequelize.sync({ force: true }).then(function() {
+    app.listen(port, function() {
+      console.log("App listening on PORT " + port);
+    });
+  });
+
